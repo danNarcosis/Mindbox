@@ -1,0 +1,8 @@
+--Из-за типа связи многие ко многим требуется создание дополнительной таблицы в которой будут храниться связи.
+
+select Products.name, Categories.name
+from Products
+left join ProductsAndCategories
+on Products.id = ProductsAndCategories.ProductsId
+left join Categories
+on ProductsAndCategories.CategoriesId = Categories.id
